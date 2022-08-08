@@ -17,15 +17,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //  Data
-        List<String> noteList = new ArrayList<>();
-        noteList.add("tekstas 01");
-        noteList.add("tekstas 02");
-        noteList.add("tekstas 03");
-        noteList.add("tekstas 04");
-        noteList.add("tekstas 05");
+        List<Note> noteList = new ArrayList<>();
+
+        Note note1 = new Note(1, "name_01", "conten_01");
+        noteList.add(note1);
+
+        Note note2 = new Note(2, "name_02", "conten_02");
+        noteList.add(note2);
+
+        Note note3 = new Note(3, "name_03", "conten_03");
+        noteList.add(note3);
+
+        Note note4 = new Note(4, "name_04", "conten_04");
+        noteList.add(note4);
+
+        Note note5 = new Note(5, "name_05", "conten_05");
+        noteList.add(note5);
+
 
         // Adaptor
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(
+        ArrayAdapter<Note> arrayAdapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_list_item_1,
                 noteList

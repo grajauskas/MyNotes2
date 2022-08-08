@@ -3,6 +3,9 @@ package com.example.mynotes2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -10,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,17 @@ public class MainActivity extends AppCompatActivity {
         // lsit view
         ListView listView = findViewById(R.id.noteListview);
         listView.setAdapter(arrayAdapter);
+
+
+        AdapterView.OnItemClickListener clickListener = new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+//                System.out.println("Click " + position);
+                Log.i("Click ", "onItemClick: "+position);
+
+            }
+        };
+        listView.setOnItemClickListener(clickListener);
 
 
     }
